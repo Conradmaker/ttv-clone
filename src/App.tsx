@@ -1,44 +1,27 @@
-import { Route } from 'react-router-dom';
-import { createGlobalStyle } from 'styled-components';
+import { Route, Switch } from 'react-router-dom';
+import { CSSTransition, SwitchTransition } from 'react-transition-group';
 import PageLayout from './components/Layout/PageLayout';
 import Banner from './components/Main/Banner';
 import Ttv from './components/Main/Ttv';
-
-const Global = createGlobalStyle`
-  html{
-    background-color: #aaa;
-    font-family: 'Roboto',sans-serif;
-    color:#fff;
-  }
-  *{
-    box-sizing: border-box;
-  }
-  a{
-    text-decoration:none;
-    color:#fff;
-  }
-  body {
-    background-image: linear-gradient(
-      122deg,
-      #fff 0.12%,
-      #000 0,
-      #000 50%,
-      #fff 0,
-      #fff 50.12%,
-      #000 0,
-      #000
-    );
-    background-size: 401px 641.73px;
-  }
-`;
+import { Global } from './utils/globalStyle';
 
 function App(): JSX.Element {
   return (
     <>
       <Global />
       <PageLayout>
-        <Route exact component={Banner} path="/" />
-        <Route exact component={Ttv} path="/getting-started" />
+        <Route
+          render={({ location }) => (
+            <SwitchTransition>
+              <CSSTransition timeout={250} classNames="switch" key={location.key}>
+                <Switch location={location}>
+                  <Route exact component={Banner} path="/" />
+                  <Route exact component={Ttv} path="/getting-started" />
+                </Switch>
+              </CSSTransition>
+            </SwitchTransition>
+          )}
+        />
       </PageLayout>
     </>
   );

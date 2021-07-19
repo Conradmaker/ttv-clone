@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 
 export const MainBannerContainer = styled.div`
+  margin: 7rem 0;
   h1 {
     font-size: 6.6rem;
     line-height: 1.15;
@@ -11,7 +12,6 @@ export const MainBannerContainer = styled.div`
 export const TTVContainer = styled.div`
   display: flex;
   flex-direction: column;
-  flex: 1;
   margin: 2.5rem 0;
   textarea {
     width: 100%;

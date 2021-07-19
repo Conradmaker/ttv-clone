@@ -6,11 +6,9 @@ export const PageLayoutContainer = styled.div`
   font-family: 'Nanum Myeongjo', serif;
   main {
     flex: 1;
-    min-height: 100vh;
     padding: 4.2rem 1rem 2rem 9rem;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
     p {
       font-weight: bold;
     }
