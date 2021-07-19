@@ -2,7 +2,10 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { LeftNavigationContainer } from './styles';
 
-export default function LeftNavigation(): JSX.Element {
+type LeftNavProps = {
+  toggleLoginModal: () => void;
+};
+export default function LeftNavigation({ toggleLoginModal }: LeftNavProps): JSX.Element {
   return (
     <LeftNavigationContainer>
       <Link to="/">
@@ -10,7 +13,7 @@ export default function LeftNavigation(): JSX.Element {
       </Link>
       <ul>
         <li>
-          <span>Login</span>
+          <span onClick={toggleLoginModal}>Login</span>
         </li>
         <li>
           <span>Dashboard(Beta)</span>
