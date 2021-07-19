@@ -7,7 +7,7 @@ export const PageLayoutContainer = styled.div`
   main {
     flex: 1;
     min-height: 100vh;
-    padding: 4.2rem 1rem;
+    padding: 4.2rem 1rem 2rem 9rem;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -18,6 +18,7 @@ export const PageLayoutContainer = styled.div`
   aside {
     width: 6.25rem;
     position: relative;
+    font-family: 'Roboto', sans-serif;
     p {
       position: absolute;
       bottom: 9.375rem;
@@ -29,7 +30,6 @@ export const PageLayoutContainer = styled.div`
 `;
 
 export const LeftNavigationContainer = styled.nav`
-  font-family: Nanum Myeongjo, serif;
   display: flex;
   flex-direction: column;
   padding: 2.8rem 3.125rem;

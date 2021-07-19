@@ -1,7 +1,9 @@
-import React from 'react';
+import { Route } from 'react-router-dom';
 import { createGlobalStyle } from 'styled-components';
 import PageLayout from './components/Layout/PageLayout';
 import Banner from './components/Main/Banner';
+import Ttv from './components/Main/Ttv';
+
 const Global = createGlobalStyle`
   html{
     background-color: #aaa;
@@ -10,6 +12,10 @@ const Global = createGlobalStyle`
   }
   *{
     box-sizing: border-box;
+  }
+  a{
+    text-decoration:none;
+    color:#fff;
   }
   body {
     background-image: linear-gradient(
@@ -31,7 +37,8 @@ function App(): JSX.Element {
     <>
       <Global />
       <PageLayout>
-        <span>배너</span>
+        <Route exact component={Banner} path="/" />
+        <Route exact component={Ttv} path="/getting-started" />
       </PageLayout>
     </>
   );
