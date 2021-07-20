@@ -9,7 +9,7 @@ export default function LeftNavigation({ toggleLoginModal }: LeftNavProps): JSX.
   return (
     <LeftNavigationContainer>
       <Link to="/">
-        <img src="http://ttv.waynehills.co/assets/logo.png" alt="" />
+        <img src="https://i.ibb.co/Y2Wm8dQ/logo.png" alt="logo" />
       </Link>
       <ul>
         <li>
